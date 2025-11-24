@@ -307,7 +307,7 @@ function ExerciseView({ groupName, exercises, grammarData, navigateBack }) {
                 Bài {currentExerciseIndex + 1} / {totalExercises} - Dạng: <span className="font-bold text-pink-600">{currentExercise.type}</span>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-xl border border-pink-200 space-y-4">
+            <div className="bg-gray-50 p-6 rounded-xl border border-pink-200 space-y-4 max-h-[62vh] overflow-y-scroll">
                 <p className="text-xl font-medium text-gray-800">{currentExercise.question}</p>
 
                 <div id="exercise-content">

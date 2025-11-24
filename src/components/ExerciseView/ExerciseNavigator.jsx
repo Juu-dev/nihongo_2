@@ -13,7 +13,7 @@ function ExerciseNavigator({ total, currentIndex, status, onNavigate }) {
                 Danh sách Bài tập
             </h4>
 
-            <div className="flex flex-wrap gap-3 justify-start">
+            <div className="flex flex-wrap gap-3 justify-start max-h-[72vh] overflow-y-scroll">
                 {items.map(index => {
                     let colorClass = 'bg-gray-200 text-gray-700 hover:bg-gray-300'; // Chưa làm/Mặc định
                     let ringClass = '';

@@ -40,22 +40,29 @@ function GrammarDetailView({ item, navigateBack }) {
                 </div>
 
                 {/* Ý nghĩa */}
-                <div>
-                    <p className="text-lg font-medium text-gray-700 mb-2">Ý nghĩa:</p>
-                    <p className="text-xl text-gray-900">{item.meaning}</p>
+
+                <div className="space-y-6 h-[37vh] overflow-y-scroll">
+                    <div className="bg-green-50 p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                        <p className="text-lg font-bold text-green-700 mb-2 inline-flex items-center">
+                            Ý nghĩa:
+                        </p>
+                        <p className="text-xl italic text-green-900 leading-relaxed">{item.meaning}</p>
+                    </div>
+
+                    {/* Ví dụ */}
+                    <div className="bg-blue-50 rounded-lg border-l-4 border-blue-400 p-4 rounded-r-lg">
+                        <p className="text-lg font-bold text-blue-800 mb-2 inline-flex items-center">
+                            Ví dụ:
+                        </p>
+                        {item.examples.map((example, index) => (
+                            <>
+                                <p className="text-lg italic text-blue-900">{example.original}</p>
+                                <p className="text-lg italic text-blue-900 mb-3">→ {example.translate}</p>
+                            </>
+                        ))}
+                    </div>
                 </div>
 
-                {/* Ví dụ */}
-
-                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                    <p className="text-base font-medium text-blue-800 mb-2">Ví dụ:</p>
-                    {item.examples.map((example, index) => (
-                        <>
-                            <p className="text-lg italic text-blue-900">{example.original}</p>
-                            <p className="text-lg italic text-blue-900 mb-3">→ {example.translate}</p>
-                        </>
-                    ))}
-                </div>
             </div>
         </>
     );
